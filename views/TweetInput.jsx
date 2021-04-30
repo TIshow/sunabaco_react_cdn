@@ -23,7 +23,8 @@ function TweetInput(props) {
   }, [textareaRef.current, props.addTweet]);
 
   return (
-    <div>
+    <div className="tweet-input">
+      <h1>GW3日間（5/3-5/5）短期集中React基礎講座！</h1>
       <div><textarea className="tweet-textarea" ref={textareaRef}></textarea></div>
       <div><button onClick={sendTweet} className="send-tweet">Tweet</button></div>
     </div>

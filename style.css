@@ -5,16 +5,27 @@
   }
   
   body {
-    background-color: rgb(240, 240, 255)
+    background-color: #D5F3Fe;
+  }
+
+  h1 {
+    color: rgb(80, 80, 80);
   }
   
   .tweet {
     display: flex;
     background-color: white;
+    width: 100%;
+    border-radius: 4px;
+    color: rgb(80, 80, 80);
+  }
+
+  .timeline {
+    padding: 24px 60px;
   }
   
   .tweet:not(:last-child) {
-    border-bottom: 1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid #D5F3Fe;
   }
   
   .icon-container {
@@ -38,9 +49,27 @@
     height: 5em;
     padding: 0.8em;
     resize: vertical;
+    margin-top: 16px;
+    border: 2px solid rgb(130, 130, 130);
+    border-radius: 4px;
   }
   
   .send-tweet {
     font-size: 1em;
     padding: 0.5em 1em;
+    border: 2px solid #008CBA;
+    border-radius: 4px;
+    background-color: #008CBA; 
+    color: white;
+    box-shadow: 0 5px #666;
+    cursor: pointer;
+  }
+
+  .send-tweet:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .tweet-input {
+    padding: 24px 60px;
   }

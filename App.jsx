@@ -54,7 +54,7 @@ function App() {
 
 	const getAxiosDemo = async () => {
 		try {
-			const res = await axios.get('https://jsondata.okiba.me/v1/json/fflCr210428043107')
+			const res = await axios.get('https://jsondata.okiba.me/v1/json/GrG7i210430064836')
 			console.log(res)
 			setTweets(res.data);
 		} catch (e) {
