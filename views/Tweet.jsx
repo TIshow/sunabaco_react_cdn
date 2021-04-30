@@ -2,7 +2,18 @@ function Tweet(props) {
 
   const [liked, setLike] = React.useState(false);
 
-  const toggleLike = React.useCallback(() => setLike((prev) => !prev), [setLike]);
+  // const toggleLike = () => {
+  //   console.log('aaa')
+  //   setLike(!liked);
+  // };
+
+  const toggleLike = React.useCallback(() => {
+    console.log('aaa');
+    setLike((prev) => !prev), [setLike]
+  }
+  );
+
+  console.log('bbb')
 
   return (
     <div className="tweet">

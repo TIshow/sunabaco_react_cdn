@@ -73,6 +73,8 @@ function App() {
 	// };
 
 	// postAxiosDemo();
+	// getAxiosDemo();
+	console.log('aaa')
 
 	// addTweet関数はuseCallbackで作成する
 	// これも毎回作成していると重くなるので
