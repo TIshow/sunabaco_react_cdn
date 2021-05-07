@@ -18,22 +18,17 @@ function App() {
 	// 	}
 	// ]);
 
-	const user = [
-		{
-			id: 0,
-			icon: '🌽',
-			displayName: 'もろこし太郎',
-			accountName: 'morokoshi',
-			content: '今日も1日もろこしがうまい'
-		},
-	];
-
 	const [tweets, setTweets] = React.useState([]);
 
+	// useEffectを使って最初の一回だけ動かす
+	// 第二引数の[]の中は、変化を監視しておきたい変数を入れる。なければ空。
+	// => その値が変化したら
+	// 再びuseEffect内が呼ばれる。
 	React.useEffect(() => {
 		getAxiosDemo();
 	}, []);
 
+	// async / awaitを使用しない場合 => 使用してください
 	// const getAxiosDemo = () => {
 	// 	axios.get('https://jsondata.okiba.me/v1/json/fflCr210428043107')
 	// 		.then(response => {
@@ -62,28 +57,21 @@ function App() {
 		}
 	};
 
-	// const postAxiosDemo = async () => {
-	// 	await axios.post('https://jsondata.okiba.me/v1/json/fflCr210428043107', { user })
-	// 		.then(res => {
-	// 			console.log(res);
-	// 			console.log(res.data);
-	// 		}).catch(error => {
-	// 			console.log(error)
-	// 		});
-	// };
+	// getAxiosDemo()；
 
-	// postAxiosDemo();
-	// getAxiosDemo();
-	console.log('aaa')
-
+	// tweetにはinputされた内容が渡される
+	// prevはそれまでのtweet。...prevとすると、これまでの全てのtweetのデータを取れる
+	// [tweet, ...prev]は、過去のtweetであるprevに、新しいtweetを追加して更新している
 	// addTweet関数はuseCallbackで作成する
-	// これも毎回作成していると重くなるので
+	// useseCallbackを使用しないと、毎回生成されてしまい重くなる
+	// 毎回作成していると重くなるので……
 	const addTweet = React.useCallback((tweet) => setTweets((prev) => [tweet, ...prev]), [setTweets]);
 
 	return (
 		<div>
 			<TweetInput addTweet={addTweet} />
 			<Timeline tweets={tweets} />
+			{/* <StateTest /> */}
 		</div>
 	);
 }

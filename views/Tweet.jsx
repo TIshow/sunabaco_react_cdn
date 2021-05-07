@@ -1,19 +1,14 @@
 function Tweet(props) {
 
+  // liked値と、likedの値をセットするための関数setLikeを定義
+  // デフォルト値はfalseにする
   const [liked, setLike] = React.useState(false);
 
-  // const toggleLike = () => {
-  //   console.log('aaa')
-  //   setLike(!liked);
-  // };
-
   const toggleLike = React.useCallback(() => {
-    console.log('aaa');
-    setLike((prev) => !prev), [setLike]
+    // falseとtrueをその時の状態によって切り替える
+    setLike(!liked);
   }
   );
-
-  console.log('bbb')
 
   return (
     <div className="tweet">
@@ -25,6 +20,7 @@ function Tweet(props) {
         </div>
         <div className="content">{props.content}</div>
         <div className="status-action">
+          {/* liked == true なら '❤️', liked != true つまりfalseなら '♡' */}
           <span onClick={toggleLike}>{liked ? '❤️' : '♡'}</span>
         </div>
       </div>
